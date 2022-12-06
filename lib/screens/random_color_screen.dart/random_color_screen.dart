@@ -9,15 +9,12 @@ class RandomColorScreen extends StatefulWidget {
   @override
   State<RandomColorScreen> createState() => _RandomColorScreenState();
 }
-
 class _RandomColorScreenState extends State<RandomColorScreen> {
-  final random = Random();
 
   @override
   Widget build(BuildContext context) {
-    final randomColor = Color.fromARGB(random.nextInt(256), random.nextInt(256),
-        random.nextInt(256), random.nextInt(256));
 
+    final Color randomColor = colorRandomizer();
     final String colorValue = randomColor.toHexTtriplet();
 
     return Scaffold(
@@ -44,5 +41,12 @@ class _RandomColorScreenState extends State<RandomColorScreen> {
         ),
       ),
     );
+  }
+
+  Color colorRandomizer() {
+    final random = Random();
+    final randomColor = Color.fromARGB(random.nextInt(256), random.nextInt(256),
+        random.nextInt(256), random.nextInt(256));
+    return randomColor;
   }
 }

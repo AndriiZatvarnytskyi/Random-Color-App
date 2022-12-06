@@ -11,13 +11,6 @@ class CustomToolTip extends StatelessWidget {
       child: Tooltip(
         preferBelow: false,
         message: '',
-        decoration: const BoxDecoration(color: Colors.white),
-        triggerMode: TooltipTriggerMode.tap,
-        onTriggered: () {
-          Clipboard.setData(
-            ClipboardData(text: text),
-          );
-        },
         textStyle: const TextStyle(fontSize: 30),
         child: GestureDetector(
           child: Container(
@@ -37,16 +30,20 @@ class CustomToolTip extends StatelessWidget {
         Clipboard.setData(
           ClipboardData(text: text),
         );
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text(
-              'Color has copied',
-              textAlign: TextAlign.center,
-            ),
-            duration: Duration(seconds: 2),
-          ),
-        );
+        scaffoldMesseg(context);
       },
+    );
+  }
+
+  void scaffoldMesseg(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text(
+          'Color has copied',
+          textAlign: TextAlign.center,
+        ),
+        duration: Duration(seconds: 2),
+      ),
     );
   }
 }
