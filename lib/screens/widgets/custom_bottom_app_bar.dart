@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets.dart';
+import 'package:random_color_app/screens/widgets/widgets.dart';
 
 class CustomBottomAppBarr extends StatelessWidget {
   const CustomBottomAppBarr({

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/random_color_screen.dart/random_color_screen.dart';
+import 'package:random_color_app/screens/random_color_screen.dart/random_color_screen.dart';
 
 void main() {
   runApp(const MyApp());
